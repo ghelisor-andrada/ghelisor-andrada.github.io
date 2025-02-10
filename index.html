@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazin Rochii de Mireasă</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Codul CSS rămâne același ca în exemplul anterior */
-    </style>
 </head>
 <body>
     <header>
         <h1>Magazin Rochii de Mireasă</h1>
         <nav>
             <ul>
-                <li><a href="#">Acasă</a></li>
+                <li><a href="index.html">Acasă</a></li>
                 <li><a href="#">Colecție</a></li>
-                <li><a href="#">Despre noi</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="despre.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <!-- Secțiunea de căutare -->
@@ -64,11 +61,16 @@
         </div>
     </section>
 
-    <!-- Secțiune Despre Noi -->
+    <!-- Secțiune Despre Noi (Mutată în despre.html) -->
     <section class="about-us">
         <h2>Despre Noi</h2>
-        <p>Ne găsiți la adresa: <strong>Pitești, Str. Republicii nr. 9</strong></p>
-        <p>Suntem pasionați de crearea și vânzarea celor mai elegante rochii de mireasă, pentru ca fiecare mireasă să se simtă minunat în ziua cea mare. Oferim o gamă largă de modele și personalizări pentru a satisface cele mai exigente gusturi.</p>
+        <p>Vrei să afli mai multe despre noi? Vizitează pagina <a href="despre.html">Despre noi</a>.</p>
+    </section>
+
+    <!-- Link către pagina de contact -->
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Pentru orice informații, vizitează pagina <a href="contact.html">Contact</a>.</p>
     </section>
 
     <footer>
@@ -93,20 +95,17 @@
         let cart = [];
         let totalPrice = 0;
 
-        // Funcția pentru adăugarea produsului în coș
         function addToCart(productName, productPrice) {
             cart.push({ name: productName, price: productPrice });
             totalPrice += productPrice;
             updateCart();
         }
 
-        // Funcția pentru actualizarea coșului
         function updateCart() {
             const cartList = document.getElementById('cart-list');
             const totalPriceElement = document.getElementById('total-price');
             const cartCount = document.getElementById('cart-count');
 
-            // Resetează lista și adaugă produsele
             cartList.innerHTML = '';
             cart.forEach(item => {
                 const li = document.createElement('li');
@@ -118,13 +117,11 @@
             cartCount.textContent = cart.length;
         }
 
-        // Funcția pentru a comuta vizibilitatea coșului
         function toggleCart() {
             const cartItems = document.getElementById('cart-items');
             cartItems.style.display = cartItems.style.display === 'none' ? 'block' : 'none';
         }
 
-        // Filtrarea produselor
         document.getElementById('filter-price').addEventListener('change', function() {
             const filterValue = this.value;
             const products = document.querySelectorAll('.produs');
@@ -144,7 +141,6 @@
             });
         });
 
-        // Funcția de căutare
         function searchProduct() {
             const searchTerm = document.getElementById('search').value.toLowerCase();
             const products = document.querySelectorAll('.produs');
