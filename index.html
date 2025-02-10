@@ -5,6 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazin Rochii de Mireasă</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: #ff66b2;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .produse {
+            padding: 20px;
+            text-align: center;
+        }
+        .grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .produs {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .produs img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .produs p.price {
+            font-size: 1.2em;
+            color: #ff66b2;
+        }
+        button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff3385;
+        }
+        .filters {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .filters select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        #cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #cart:hover {
+            background-color: #ff3385;
+        }
+        #cart-items {
+            position: absolute;
+            bottom: 60px;
+            right: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #cart-items ul {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-items ul li {
+            padding: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,26 +137,35 @@
         <h2>Bucură-te de cele mai elegante rochii de mireasă</h2>
     </section>
 
+    <section class="filters">
+        <label for="filter-price">Filtrează după preț: </label>
+        <select id="filter-price">
+            <option value="all">Toate</option>
+            <option value="low">Sub 5000 Lei</option>
+            <option value="high">Peste 5000 Lei</option>
+        </select>
+    </section>
+
     <section class="produse">
         <h2>Colecția Noastră</h2>
         <div class="grid">
-            <div class="produs">
+            <div class="produs" data-price="4500">
                 <img src="rochie1.jpg" alt="Rochie de mireasă 1">
                 <p>Rochie de mireasă elegantă</p>
                 <p class="price">4500 Lei</p>
-                <button>Cumpără acum</button>
+                <button onclick="addToCart('Rochie de mireasă elegantă', 4500)">Cumpără acum</button>
             </div>
-            <div class="produs">
+            <div class="produs" data-price="5100">
                 <img src="rochie2.jpg" alt="Rochie de mireasă 2">
                 <p>Rochie de mireasă clasică</p>
                 <p class="price">5100 Lei</p>
-                <button>Cumpără acum</button>
+                <button onclick="addToCart('Rochie de mireasă clasică', 5100)">Cumpără acum</button>
             </div>
-            <div class="produs">
+            <div class="produs" data-price="4800">
                 <img src="rochie3.jpg" alt="Rochie de mireasă 3">
                 <p>Rochie de mireasă modernă</p>
                 <p class="price">4800 Lei</p>
-                <button>Cumpără acum</button>
+                <button onclick="addToCart('Rochie de mireasă modernă', 4800)">Cumpără acum</button>
             </div>
         </div>
     </section>
@@ -50,5 +173,75 @@
     <footer>
         <p>&copy; 2025 Magazin Rochii de Mireasă - Toate drepturile rezervate.</p>
     </footer>
+
+    <!-- Coșul de cumpărături -->
+    <div id="cart" onclick="toggleCart()">
+        🛒
+        <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-items" style="display: none;">
+        <h3>Coșul tău</h3>
+        <ul id="cart-list">
+            <li>Coșul este gol</li>
+        </ul>
+        <p id="total-price">Total: 0 Lei</p>
+    </div>
+
+    <script>
+        let cart = [];
+        let totalPrice = 0;
+
+        // Funcția pentru adăugarea produsului în coș
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            totalPrice += productPrice;
+            updateCart();
+        }
+
+        // Funcția pentru actualizarea coșului
+        function updateCart() {
+            const cartList = document.getElementById('cart-list');
+            const totalPriceElement = document.getElementById('total-price');
+            const cartCount = document.getElementById('cart-count');
+
+            // Resetează lista și adaugă produsele
+            cartList.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.price} Lei`;
+                cartList.appendChild(li);
+            });
+
+            totalPriceElement.textContent = `Total: ${totalPrice} Lei`;
+            cartCount.textContent = cart.length;
+        }
+
+        // Funcția pentru a comuta vizibilitatea coșului
+        function toggleCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.style.display = cartItems.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Filtrarea produselor
+        document.getElementById('filter-price').addEventListener('change', function() {
+            const filterValue = this.value;
+            const products = document.querySelectorAll('.produs');
+
+            products.forEach(product => {
+                const price = parseInt(product.getAttribute('data-price'));
+
+                if (filterValue === 'all') {
+                    product.style.display = 'block';
+                } else if (filterValue === 'low' && price < 5000) {
+                    product.style.display = 'block';
+                } else if (filterValue === 'high' && price >= 5000) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
