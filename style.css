@@ -1,105 +1,185 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #f8f4f9;
+    color: #4f4a55;
 }
 
 header {
-    background-color: #ff99cc;
-    padding: 20px;
+    background-color: #ffd1dc;
+    padding: 30px;
     text-align: center;
-    color: white;
+    color: #ffffff;
+    font-family: 'Cursive', sans-serif;
+    border-bottom: 4px solid #ff99cc;
+}
+
+header h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff66b2;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.search-container input {
+    padding: 15px;
+    font-size: 1.2em;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ffd1dc;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+}
+
+.search-container button {
+    padding: 15px 25px;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 15px;
+}
+
+.search-container button:hover {
+    background-color: #ff3385;
 }
 
 .hero {
-    background: #ff66b2;
+    background: linear-gradient(to right, #ff99cc, #ff66b2);
     color: white;
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 0;
+    font-size: 2.5em;
+    font-family: 'Cursive', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .produse {
-    padding: 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .filters {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .filters label {
     font-size: 1.1em;
-    color: #333;
+    color: #ff66b2;
     margin-right: 10px;
+    font-family: 'Georgia', serif;
 }
 
 .filters select {
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    margin: 0 10px;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border: 2px solid #ff66b2;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.filters select:focus {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
 .grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-    gap: 20px;
+    padding: 20px;
 }
 
 .produs {
     background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    margin-bottom: 30px;
 }
 
 .produs:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 40px rgba(255, 105, 180, 0.4);
 }
 
 .produs img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produs img:hover {
+    transform: scale(1.05);
 }
 
 .produs p.price {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #ff66b2;
-    margin-top: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
 }
 
 button {
     background-color: #ff66b2;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 30px;
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
@@ -112,15 +192,16 @@ button:hover {
     right: 20px;
     background-color: #ff66b2;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 25px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    transition: background-color 0.3s ease-in-out;
 }
 
 #cart:hover {
@@ -129,43 +210,68 @@ button:hover {
 
 #cart-items {
     position: absolute;
-    bottom: 60px;
+    bottom: 80px;
     right: 20px;
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     display: none;
+    font-family: 'Georgia', serif;
 }
 
 #cart-items h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #ff66b2;
+    margin-bottom: 15px;
 }
 
 #cart-items ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #cart-items ul li {
     padding: 5px 0;
+    font-size: 1.1em;
 }
 
 #cart-items p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #ff66b2;
     font-weight: bold;
 }
 
-footer {
-    background-color: #ff99cc;
-    padding: 10px;
+.about-us {
+    background-color: #fff0f6;
+    padding: 50px;
     text-align: center;
-    color: white;
-    margin-top: 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    color: #ff66b2;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    color: #4f4a55;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #ffd1dc;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1em;
 }
 
 @media (max-width: 768px) {
