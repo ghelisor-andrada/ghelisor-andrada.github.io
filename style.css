@@ -7,18 +7,17 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-  background-color: gold;
-  color: black;
+    color: #000000; /* Negru */
 }
 
 /* Header */
 header {
-    background-color: rgba(255, 209, 220, 0.9);
+    background-color: rgba(255, 215, 0, 0.9); /* Auriu */
     padding: 30px;
     text-align: center;
-    color: #ffffff;
+    color: #000000; /* Negru */
     font-family: 'Cursive', sans-serif;
-    border-bottom: 4px solid #ff99cc;
+    border-bottom: 4px solid #b8860b; /* Auriu închis */
 }
 
 header h1 {
@@ -42,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #000000; /* Negru */
     text-decoration: none;
     font-size: 1.1em;
     text-transform: uppercase;
@@ -51,7 +50,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff66b2;
+    color: #b8860b; /* Auriu închis */
 }
 
 /* Căutare */
@@ -65,19 +64,20 @@ nav ul li a:hover {
     font-size: 1.2em;
     width: 300px;
     border-radius: 20px;
-    border: 1px solid #ffd1dc;
+    border: 1px solid #b8860b; /* Auriu închis */
     background-color: #ffffff;
-    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 8px rgba(218, 165, 32, 0.5); /* Auriu */
     transition: box-shadow 0.3s ease-in-out;
+    color: #000000;
 }
 
 .search-container input:focus {
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.8);
 }
 
 .search-container button {
     padding: 15px 25px;
-    background-color: #ff66b2;
+    background-color: #b8860b; /* Auriu închis */
     color: white;
     border: none;
     border-radius: 30px;
@@ -89,43 +89,18 @@ nav ul li a:hover {
 }
 
 .search-container button:hover {
-    background-color: #ff3385;
+    background-color: #8b6508; /* Auriu mai închis */
 }
 
 /* Secțiunea principală */
 .hero {
-    background: linear-gradient(to right, rgba(255, 153, 204, 0.9), rgba(255, 102, 178, 0.9));
-    color: white;
+    background: linear-gradient(to right, rgba(255, 215, 0, 0.9), rgba(218, 165, 32, 0.9));
+    color: #000000; /* Negru */
     text-align: center;
     padding: 100px 0;
     font-size: 2.5em;
     font-family: 'Cursive', sans-serif;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Filtrare produse */
-.filters {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.filters label {
-    font-size: 1.1em;
-    color: #ff66b2;
-    margin-right: 10px;
-}
-
-.filters select {
-    padding: 12px;
-    font-size: 1.1em;
-    border-radius: 10px;
-    border: 2px solid #ff66b2;
-    background-color: #fff;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.filters select:focus {
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
 /* Grid de produse */
@@ -146,11 +121,12 @@ nav ul li a:hover {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: center;
     margin-bottom: 30px;
+    color: #000000; /* Negru */
 }
 
 .produs:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 40px rgba(255, 105, 180, 0.4);
+    box-shadow: 0 6px 40px rgba(218, 165, 32, 0.4);
 }
 
 .produs img {
@@ -166,14 +142,14 @@ nav ul li a:hover {
 
 .produs p.price {
     font-size: 1.3em;
-    color: #ff66b2;
+    color: #b8860b; /* Auriu închis */
     font-weight: bold;
     margin-top: 15px;
 }
 
 /* Butoane generale */
 button {
-    background-color: #ff66b2;
+    background-color: #b8860b; /* Auriu închis */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -186,7 +162,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff3385;
+    background-color: #8b6508; /* Auriu mai închis */
 }
 
 /* Coș de cumpărături */
@@ -194,7 +170,7 @@ button:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ff66b2;
+    background-color: #b8860b; /* Auriu închis */
     color: white;
     padding: 15px 25px;
     border-radius: 50%;
@@ -209,24 +185,12 @@ button:hover {
 }
 
 #cart:hover {
-    background-color: #ff3385;
-}
-
-#cart-items {
-    position: absolute;
-    bottom: 80px;
-    right: 20px;
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 250px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    display: none;
+    background-color: #8b6508; /* Auriu mai închis */
 }
 
 /* Secțiunea Despre Noi */
 .about-us {
-    background-color: rgba(255, 240, 246, 0.9);
+    background-color: rgba(255, 215, 0, 0.9);
     padding: 50px;
     text-align: center;
     margin-top: 60px;
@@ -235,16 +199,16 @@ button:hover {
 }
 
 .about-us h2 {
-    color: #ff66b2;
+    color: #000000; /* Negru */
     font-size: 2em;
     margin-bottom: 20px;
 }
 
 footer {
-    background-color: rgba(255, 209, 220, 0.9);
+    background-color: rgba(255, 215, 0, 0.9);
     padding: 20px;
     text-align: center;
-    color: #ffffff;
+    color: #000000; /* Negru */
     font-size: 1.1em;
 }
 
