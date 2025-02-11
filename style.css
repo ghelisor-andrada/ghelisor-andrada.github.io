@@ -1,14 +1,25 @@
+/* Setări generale */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f4f9;
-    color: #4f4a55;
     background-image: url('background.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    color: #4f4a55;
 }
+
+/* Header */
+header {
+    background-color: rgba(255, 209, 220, 0.9);
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Cursive', sans-serif;
+    border-bottom: 4px solid #ff99cc;
+}
+
 header h1 {
     font-size: 3em;
     letter-spacing: 2px;
@@ -17,6 +28,7 @@ header h1 {
     font-weight: bold;
 }
 
+/* Navigație */
 nav ul {
     list-style: none;
     padding: 0;
@@ -41,10 +53,10 @@ nav ul li a:hover {
     color: #ff66b2;
 }
 
+/* Căutare */
 .search-container {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px 0 40px;
 }
 
 .search-container input {
@@ -79,8 +91,9 @@ nav ul li a:hover {
     background-color: #ff3385;
 }
 
+/* Secțiunea principală */
 .hero {
-    background: linear-gradient(to right, #ff99cc, #ff66b2);
+    background: linear-gradient(to right, rgba(255, 153, 204, 0.9), rgba(255, 102, 178, 0.9));
     color: white;
     text-align: center;
     padding: 100px 0;
@@ -89,11 +102,7 @@ nav ul li a:hover {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.produse {
-    padding: 50px 20px;
-    text-align: center;
-}
-
+/* Filtrare produse */
 .filters {
     text-align: center;
     margin: 40px 0;
@@ -103,7 +112,6 @@ nav ul li a:hover {
     font-size: 1.1em;
     color: #ff66b2;
     margin-right: 10px;
-    font-family: 'Georgia', serif;
 }
 
 .filters select {
@@ -112,7 +120,6 @@ nav ul li a:hover {
     border-radius: 10px;
     border: 2px solid #ff66b2;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(255, 105, 180, 0.3);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -120,6 +127,7 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
+/* Grid de produse */
 .grid {
     display: flex;
     justify-content: center;
@@ -160,9 +168,9 @@ nav ul li a:hover {
     color: #ff66b2;
     font-weight: bold;
     margin-top: 15px;
-    text-transform: uppercase;
 }
 
+/* Butoane generale */
 button {
     background-color: #ff66b2;
     color: white;
@@ -180,6 +188,7 @@ button:hover {
     background-color: #ff3385;
 }
 
+/* Coș de cumpărături */
 #cart {
     position: fixed;
     bottom: 20px;
@@ -212,34 +221,11 @@ button:hover {
     width: 250px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     display: none;
-    font-family: 'Georgia', serif;
 }
 
-#cart-items h3 {
-    font-size: 1.3em;
-    color: #ff66b2;
-    margin-bottom: 15px;
-}
-
-#cart-items ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-#cart-items ul li {
-    padding: 5px 0;
-    font-size: 1.1em;
-}
-
-#cart-items p {
-    font-size: 1.2em;
-    color: #ff66b2;
-    font-weight: bold;
-}
-
+/* Secțiunea Despre Noi */
 .about-us {
-    background-color: #fff0f6;
+    background-color: rgba(255, 240, 246, 0.9);
     padding: 50px;
     text-align: center;
     margin-top: 60px;
@@ -251,23 +237,17 @@ button:hover {
     color: #ff66b2;
     font-size: 2em;
     margin-bottom: 20px;
-    font-family: 'Cursive', sans-serif;
-}
-
-.about-us p {
-    font-size: 1.2em;
-    color: #4f4a55;
-    line-height: 1.5;
 }
 
 footer {
-    background-color: #ffd1dc;
+    background-color: rgba(255, 209, 220, 0.9);
     padding: 20px;
     text-align: center;
     color: #ffffff;
     font-size: 1.1em;
 }
 
+/* Responsivitate */
 @media (max-width: 768px) {
     .grid {
         flex-direction: column;
